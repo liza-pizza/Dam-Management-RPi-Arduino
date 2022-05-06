@@ -19,11 +19,24 @@ python3 tcpServer.py
 
 4. Locations to add things 
 
-```
-sudo nano /home/pi/.bashrc   -> start vnc thingy 
+    4a. start vnc thingy 
+    
+    ``` 
+    home/pi/.bashrc
+    ```
 
+    
+    
+    4b. the actual server here
+    
+    ``` 
+    /home/pi/tcpserver
+    ```
+    
 
-home/pi/tcpserver  -> the actual server here
+    4c. add service here lol
+    
+    ``` 
+    /etc/systemd/system/tcpserver.service 
+    ```
 
-
-/etc/systemd/system/tcpserver.service  -> add service lol
