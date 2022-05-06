@@ -16,3 +16,14 @@ pip install -r requirements.txt
 ```
 python3 tcpServer.py
 ```
+
+4. Locations to add things 
+
+```
+sudo nano /home/pi/.bashrc   -> start vnc thingy 
+
+
+home/pi/tcpserver  -> the actual server here
+
+
+/etc/systemd/system/tcpserver.service  -> add service lol
