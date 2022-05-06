@@ -1,0 +1,12 @@
+[Unit]
+Description=TCP server 
+After=network.target
+
+[Service]
+User=pi
+WorkingDirectory=home/pi/tcpserver
+ExecStart=/home/pi/tcpserver/venv/bin/python3 tcpServer.py 
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
