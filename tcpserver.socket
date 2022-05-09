@@ -1,0 +1,9 @@
+[Unit]
+Description=tcp Socket
+PartOf=tcpserver.service
+
+[Socket]
+ListenStream=0.0.0.0:9998
+
+[Install]
+WantedBy=sockets.target

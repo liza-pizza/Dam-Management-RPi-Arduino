@@ -1,12 +1,14 @@
 [Unit]
 Description=TCP server 
 After=network.target
+Requires=tcpserver.socket
 
 [Service]
-User=pi
-WorkingDirectory=home/pi/tcpserver
-ExecStart=/home/pi/tcpserver/venv/bin/python3 tcpServer.py 
-Restart=always
+Type=simple
+User=ubuntu
+Group=www-data
+WorkingDirectory=/home/ubuntu/raspberryTest
+ExecStart=/home/ubuntu/finalProject/venv/bin/python3 tcpServer.py 
 
 [Install]
 WantedBy=multi-user.target
