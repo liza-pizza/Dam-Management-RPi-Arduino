@@ -1,7 +1,6 @@
 [Unit]
 Description=TCP server 
 After=network.target
-Requires=tcpserver.socket
 
 [Service]
 Type=simple
