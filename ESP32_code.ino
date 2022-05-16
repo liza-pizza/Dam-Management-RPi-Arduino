@@ -49,11 +49,11 @@ void setup() {
 //  serializeJson(doc, jsonStr);
   
 //receive data on serial
-  //another way
-  while(Serial.available() == 0) { 
+  
+   while(Serial2.available() == 0) { 
     }
   
-  jsonStr = Serial.readString();
+  jsonStr = Serial2.readString();
   Serial.println(jsonStr);
   
  
