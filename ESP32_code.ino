@@ -1,9 +1,8 @@
-#include <HTTPClient.h>
 #include <ArduinoJson.h>
 #include <WiFi.h>
 
 //for interrupt
-const byte inpin = 32;
+const byte inpin = 13;
 
 //for uart
 #define RXD2 16
@@ -12,19 +11,18 @@ const byte inpin = 32;
 #define uS_TO_S_FACTOR 1000000ULL
 
 
-const char* ssid = "Cgarden 2";
-const char* password = "9497238183";
+const char* ssid = "Nord NMC";
+const char* password = "airfirewater";
 
 const uint16_t port = 9999;
-const char * host = "192.168.1.32";
-
+const char * host = "192.168.131.145";
 RTC_DATA_ATTR int bootCount = 0;
 WiFiClient espClient;
 
 
 void setup() {
   
-  Serial.begin(115200);
+  Serial.begin(9600);
   Serial2.begin(9600, SERIAL_8N1, RXD2, TXD2);
   bootCount++;
   Serial.println("Boot number: " + String(bootCount));
@@ -32,7 +30,7 @@ void setup() {
   String jsonStr;
 
   print_wakeup_reason();
-  uint64_t sleep_time_min = 5; //setting sleeptime
+  uint64_t sleep_time_min = 1; //setting sleeptime
 
   //sending interrupt pin
   pinMode(inpin, OUTPUT); 
@@ -49,8 +47,8 @@ void setup() {
 //  serializeJson(doc, jsonStr);
   
 //receive data on serial
-  
-   while(Serial2.available() == 0) { 
+  //another way
+  while(Serial2.available() == 0) { 
     }
   
   jsonStr = Serial2.readString();
