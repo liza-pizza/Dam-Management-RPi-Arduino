@@ -31,7 +31,7 @@ void loop() {
   
   DynamicJsonDocument doc(1024);
   doc["sensor"]= 9;
-  doc["distance"] = distance;
+  doc["water_depth"] = distance;
   doc["site"] = 2;
   String jsonStr;
   serializeJson(doc, jsonStr);

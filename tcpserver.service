@@ -6,8 +6,8 @@ After=network.target
 Type=simple
 User=ubuntu
 Group=www-data
-WorkingDirectory=/home/ubuntu/raspberryTest
-ExecStart=/home/ubuntu/finalProject/venv/bin/python3 tcpServer.py 
+WorkingDirectory=/home/pi/Desktop/damMng
+ExecStart=/usr/bin/python3 -u tcpServer.py 
 
 [Install]
 WantedBy=multi-user.target

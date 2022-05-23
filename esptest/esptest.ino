@@ -12,11 +12,12 @@ const byte inpin = 13;
 #define uS_TO_S_FACTOR 1000000ULL
 
 
+
 const char* ssid = "AndroidAP";
 const char* password = "12345678";
 
 const uint16_t port = 9999;
-const char * host = "192.168.1.32";
+const char * host = "192.168.43.233";
 
 RTC_DATA_ATTR int bootCount = 0;
 WiFiClient espClient;
@@ -40,40 +41,42 @@ void setup() {
   delay(1000);                       // wait for a second
   digitalWrite(inpin, LOW);    // turn the LED off by making the voltage LOW
   delay(1000);
-  
-  
  
-//  //Conecting to Wi-Fi
-//  Serial.print("Connecting to ");
-//  Serial.println(ssid);
-//  wifiConnect();
-//  Serial.println("");
-//  Serial.println("WiFi connected");
-//  Serial.println("IP address: ");
-//  Serial.println(WiFi.localIP());
+   Serial.println("here"); 
 
-  //receive data on serial
-
-  jsonStr = Serial2.readString();
   
+   while(Serial2.available() == 0) { 
+    }
+    
+  jsonStr = Serial2.readString();
   Serial.println(jsonStr);
   
+  //Conecting to Wi-Fi
+  Serial.print("Connecting to ");
+  Serial.println(ssid);
+  wifiConnect();
+  Serial.println("");
+  Serial.println("WiFi connected");
+  Serial.println("IP address: ");
+  Serial.println(WiFi.localIP());
+    
   //TCP connection
   Serial.println(host); 
-//  if (!espClient.connect(host, port)) {
-// 
-//     Serial.println("Connection to host failed");
-//    Serial.println(espClient.connect(host, port));
-//    delay(1000);
-//   
-//  }
-//  else{
-//    Serial.println("TCP Connected");
-//    espClient.print(jsonStr);
-//  
-//  } 
+  if (!espClient.connect(host, port)) {
+ 
+     Serial.println("Connection to host failed");
+    Serial.println(espClient.connect(host, port));
+    delay(1000);
+   
+  }
+  else{
+    Serial.println("TCP Connected");
+    espClient.print(jsonStr);
+  
+  } 
 
 //ESP to sleep mode
+
   esp_sleep_enable_timer_wakeup(30000000); //should be in microsec
   Serial.println("The module goes to sleep for: ");
   Serial.println(30000000);
