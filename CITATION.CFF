@@ -1,16 +1,16 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-- family-names: "BIPIN"
-  given-names: "MOHITA"
-- family-names: "SHAJI"
-  given-names: "NAMITHA"
-- family-names: "CLETUS"
-  given-names: "NIMISHA"
-- family-names: "REGHUNATH"
-  given-names: "RANJANA"
-- family-names: "MENON"
-  given-names: "SREERENJIMA"
+- family-names: "Bipin"
+  given-names: "Mohita Liza"
+- family-names: "Shaji"
+  given-names: "Namitha"
+- family-names: "Cletus"
+  given-names: "Nimisha Maria"
+- family-names: "Reghunath"
+  given-names: "Ranjana"
+- family-names: "Menon"
+  given-names: "Sreerenjima"
 title: "Dam-Mangament-RPi-Arduino"
 version: 1.0.0
 doi: 10.5281/zenodo.1234
