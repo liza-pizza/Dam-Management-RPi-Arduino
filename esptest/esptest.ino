@@ -17,7 +17,7 @@ const char* ssid = "AndroidAP";
 const char* password = "12345678";
 
 const uint16_t port = 9999;
-const char * host = "192.168.43.233";
+const char * host = "";
 
 RTC_DATA_ATTR int bootCount = 0;
 WiFiClient espClient;
