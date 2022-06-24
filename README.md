@@ -1,17 +1,18 @@
+#  Steps to set up dev environment
 
-1. create venv if you want
+1. Create venv (Optional)
 ```
 python3 -m venv venv
 source venv/bin/activate
 ```
 
-2. install requirements.txt
+2. Install requirements.txt
 
 ```
 pip install -r requirements.txt
 ```
 
-3. run 
+3. Run server
 
 ```
 python3 tcpServer.py
