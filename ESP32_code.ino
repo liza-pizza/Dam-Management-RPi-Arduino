@@ -15,7 +15,7 @@ const char* ssid = "Nord NMC";
 const char* password = "airfirewater";
 
 const uint16_t port = 9999;
-const char * host = "192.168.131.145";
+const char * host = "192.168.108.145";
 RTC_DATA_ATTR int bootCount = 0;
 WiFiClient espClient;
 
@@ -76,13 +76,14 @@ void setup() {
   else{
     Serial.println("TCP Connected");
     espClient.print(jsonStr);
+    Serial.println(jsonStr);
   
   } 
 
 //ESP to sleep mode
   esp_sleep_enable_timer_wakeup(sleep_time_min * 60 *uS_TO_S_FACTOR); //should be in microsec
   Serial.println("The module goes to sleep for: ");
-  Serial.println(sleep_time_min * uS_TO_S_FACTOR);
+  Serial.println(sleep_time_min *60 * uS_TO_S_FACTOR);
   Serial.println("Going to sleep...");
   Serial.flush(); 
   
