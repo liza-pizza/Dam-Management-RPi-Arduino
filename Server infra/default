@@ -1,0 +1,24 @@
+
+upstream flaskfinalProject {
+    server 127.0.0.1:8000;
+}
+
+server {
+	listen 80 default_server;
+	listen [::]:80 default_server;
+
+	root /var/www/html;
+
+	
+
+	server_name _;
+
+	location / {
+		location / {
+    proxy_pass http://flaskfinalProject;
+}
+
+	}
+
+	
+}
